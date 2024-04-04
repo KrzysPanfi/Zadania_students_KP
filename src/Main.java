@@ -1,17 +1,31 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        ArrayList<Integer> listaocen = new ArrayList<>();
+        listaocen.add(3);
+        listaocen.add(2);
+        Student st1 = new Student("Jan", "Kowalski", 15, "Jan@gmail.com", "Uminskiego24", listaocen);
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        ArrayList<Student> students = new ArrayList<>();
+        ArrayList<Subject> subjects = new ArrayList<>();
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
+        System.out.println(st1.Average_of_grades());
+
+        StudentGroup gr1 = new StudentGroup("Grupa1", students);
+        gr1.add_Student(st1);
+
+        Teacher teach1=new Teacher("Andrzej","Nowak","NowA@gmail.com",subjects);
+        Subject subj1= new Subject("Programowianie_obiekt","zajęcia",30);
+        Subject subj2= new Subject("Metody_numeryczne","wykład",30);
+        Subject subj3= new Subject("Struktury_danych","zajęcia",30);
+        Subject subj4= new Subject("Arytmetyka","zajęcia",30);
+        //teach1.AddSubject(subj1);
+        teach1.AddSubject(subj2);
+        //teach1.AddSubject(subj3);
+        //teach1.AddSubject(subj4);
+        System.out.println(teach1.Wage());
+
+
     }
-}
+    }
